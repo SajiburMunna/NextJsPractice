@@ -1,19 +1,23 @@
 import axios from "axios";
+import Users from "./../components/users";
+
 const data = ({ data }) => {
   return (
-    <div>
+    <div style={{ textAlign: "center", color: "red" }}>
       <h1>All Data Displayed</h1>
+
       {data.map((u) => (
         <div
           key={Math.random()}
           style={{
             border: "1px solid yellow",
             width: "400px",
-            margin: "20px",
+            margin: "30px",
           }}
         >
-          <p style={{ color: "red" }}>{u.score}</p>
-          <p style={{ color: "green" }}>{u.show.name}</p>
+          <p>{u.score}</p>
+          <p>{u.show.name}</p>
+          <Users users={u}></Users>
         </div>
       ))}
     </div>
